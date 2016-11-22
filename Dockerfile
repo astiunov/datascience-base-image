@@ -1,4 +1,4 @@
-FROM registry.yandex.net/ubuntu:xenial
+FROM ubuntu:xenial
 MAINTAINER Alexander Tiunov <astiunov@yandex-team.ru>
 
 COPY *.txt install.sh ./
