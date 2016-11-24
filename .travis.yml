@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+language: generic
+install:
+  - make build
+script:
+  - set -e
+  - make test
+  - if [[ "$TRAVIS_BRANCH" = "master" ]]; then make push ; fi
+  - set +e
