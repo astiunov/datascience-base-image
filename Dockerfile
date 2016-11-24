@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 MAINTAINER Alexander Tiunov <astiunov@yandex-team.ru>
 
-COPY *.txt install.sh ./
-ENV PATH="/root/miniconda3/bin:${PATH}"
-RUN source ./install.sh
+COPY *.yml install.sh ./
+ENV PATH="/home/miniconda3/bin:${PATH}"
+RUN ./install.sh

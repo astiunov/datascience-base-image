@@ -5,6 +5,6 @@ Docker image for data science in Ya.Contest. Installs jupyter and 3 conda enviro
 * py2_env with python2
 * r_env with R (+ xgboost)
 
-See *requirements.txt for a packages' details.
+See *env.yml for a packages' details.
 
 Use ```make build``` to build an image.
