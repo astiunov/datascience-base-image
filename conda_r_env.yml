@@ -1,4 +1,5 @@
 channels:
   - r
 dependencies:
+  - jupyter
   - r-essentials=1.4.3
