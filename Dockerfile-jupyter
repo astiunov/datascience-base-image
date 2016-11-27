@@ -1,0 +1,5 @@
+FROM data-science
+MAINTAINER Alexander Tiunov <astiunov@yandex-team.ru>
+
+COPY install-jupyter.sh ./
+RUN ./install-jupyter.sh
