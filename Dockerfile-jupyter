@@ -1,5 +1,17 @@
-FROM data-science
+FROM astiunov/data-science
 MAINTAINER Alexander Tiunov <astiunov@yandex-team.ru>
 
-COPY install-jupyter.sh ./
-RUN ./install-jupyter.sh
+RUN mkdir -p /srv
+COPY install-jupyter.sh run-jupyter.sh /srv/
+ADD https://raw.githubusercontent.com/jupyterhub/jupyterhub/master/scripts/jupyterhub-singleuser /usr/local/bin/jupyterhub-singleuser
+RUN chmod 755 /usr/local/bin/jupyterhub-singleuser && /srv/install-jupyter.sh
+
+USER jupyter
+ENV HOME /home/jupyter
+ENV SHELL /bin/bash
+ENV USER jupyter
+
+WORKDIR /home/jupyter/
+EXPOSE 8888
+
+RUN /srv/run-jupyter.sh
