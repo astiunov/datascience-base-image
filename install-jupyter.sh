@@ -15,7 +15,9 @@ apt-get install -y -q \
     nodejs-legacy \
     npm
 
-conda install -y jupyter
+npm install -g configurable-http-proxy
+
+conda env update -n root --file jupyter_req.yml
 
 source activate py3_env
 conda install -y ipykernel && python -m ipykernel install
@@ -29,5 +31,4 @@ echo 'IRkernel::installspec(user = FALSE)' >r_kernel.R && Rscript r_kernel.R
 
 source deactivate
 
-rm -rf r_kernel.R /tmp/*
-useradd -m -s /bin/bash jupyter
+rm -rf r_kernel.R /tmp/* jupyter_req.yml

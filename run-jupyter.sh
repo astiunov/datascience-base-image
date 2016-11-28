@@ -19,4 +19,10 @@ if [ "$JPY_API_TOKEN" != "" ] ; then
     exit $?
 fi
 
+if [ "$JUPYTER_PORT" != "" ] ; then
+    JUPYTER_OPTIONS+=" --port $JUPYTER_PORT"
+fi
+
 mkdir -p $HOME/notebooks
+echo "Starting Jupyter"
+jupyter notebook --ip=0.0.0.0 --no-browser $JUPYTER_OPTIONS $HOME/notebooks 2>&1 | tee -a $HOME/notebooks/jupyter.log
