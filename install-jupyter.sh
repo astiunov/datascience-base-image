@@ -4,6 +4,7 @@ apt-get install -y -q \
     curl \
     xvfb \
     wget \
+    vim \
     zlib1g-dev \
     git \
     libzmq3-dev \

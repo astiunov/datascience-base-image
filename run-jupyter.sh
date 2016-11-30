@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOTEBOOK_DIR=/home/main/notebooks
+NOTEBOOK_DIR=/notebooks
 
 if [ "$JPY_API_TOKEN" != "" ] ; then
     echo "Starting under Jupyterhub"

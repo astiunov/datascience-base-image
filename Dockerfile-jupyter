@@ -9,17 +9,5 @@ RUN chmod 755 /usr/local/bin/jupyterhub-singleuser && /srv/install-jupyter.sh
 
 EXPOSE 8888
 
-RUN useradd -m -s /bin/bash main
-
-USER main
-ENV HOME /home/main
 ENV SHELL /bin/bash
-ENV USER main
-WORKDIR /home/main/
-
-USER root
-RUN ln -s /usr/miniconda3 /home/main/anaconda && chown -R main:main /home/main
-
-USER main
-
 CMD ["sh", "/srv/run-jupyter.sh"]
