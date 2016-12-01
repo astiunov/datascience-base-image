@@ -1,4 +1,4 @@
-FROM astiunov/data-science
+FROM astiunov/data-science:latest
 MAINTAINER Alexander Tiunov <astiunov@yandex-team.ru>
 
 RUN mkdir -p /srv
